@@ -1,203 +1,106 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1: Exploring climate data of Singapore
 
-### Overview
-
-Our first module in DSI covers:
-- Basic statistics and probability
-- Many Python programming concepts
-- Programmatically interacting with files and directories
-- Visualizations
-- EDA
-- Working with Jupyter notebooks for development and reporting
-
-You might wonder if you're ready to start doing data science. While you still have **tons** to learn, there are many aspects of the data science process that you're ready to tackle. Project 1 aims to allow you to practice and demonstrate these skills.
-
-For our first project, we're going to analyze climate trends in Singapore. Climate refers to the general weather conditions prevailing over an area for a long period. There are several aspect to studying climate that includes rainfall, temperature, relative humidity, wet build temperature, sun shine duration etc.
-
 
 ### Problem Statement
 
-Generally speaking, you will be asked to come up with a data science problem. This problem is ultimately up to you, but below are some guidelines/things to consider when crafting a problem statement:
-> 1. Consider your audience. Who is your project going to help? Who will your presentation be geared towards? Establishing your audience first can help you narrow down your scope.
-> 2. Consider the data you will use. Based on the contents of this data, think about some questions you could reasonably answer. These questions should aim to solve some kind of problem.
-> 3. Based on these questions, what would bring some kind value to your audience? This can be business insights, increase sales, make decisions, etc.
-> 4. Put everything from the above steps together into a few sentences that describe the specific problem you are trying to solve and who it will benefit.
-> [Here is a blog post](https://towardsdatascience.com/defining-a-data-science-problem-4cbf15a2a461) about crafting a data science problem statement.
-
-Here are some example prompts if you need inspiration:
-> * Your work for the Singapore tourism and you are required to advice tourist who visit Singapore and love being outdoors, on how they can be prepared based on their travel months.
-> * You work for a local delivery-app and you want to use weather to better plan your operations.
-> * You are hired by Meteorological Services Singapore to analyze weather trends in Singapore and identify business that might be interested to use them.
-> * You are an outdoor event planner. After covid, you want to create events that families can come and enjoy. 
-> * *Feel free to be creative with your own prompt!*
-
-And here are some example problem statements related to the above prompts. Come up with your own or modify these for your needs:
-> * Weather in Singapore are largely sunny or rainy. However, tourists who are not familiar with local weather conditions may be caught off guard, causing their plans to be disrupted. This project aims to analyse trends in Singapore weather to identify adverse conditions for tourists who enjoy being outdoor. This analysis can help tourist plan travel period and itinerary better, bringing home a pleasant experience.
-> * You are working for a local delivery services company. Every year, delivery operations and customer demand are heavily impacted by rainy weather conditions. This can be circumvented if the company can plan for such conditions beforehand. This project aims to analyse the monthly weather patterns over the year to allow the operations team to better plan and allocate resources during the rainy seasons.
-> * *Feel free to be creative with your own problem statement!*
-
-
-### ---
-
-### Datasets
-
-#### Provided Data
-
-There are 2 datasets included in the [`data`](./data/) folder for this project. These correponds to rainfall information. 
-
-* [`rainfall-monthly-number-of-rain-days.csv`](./data/rainfall-monthly-number-of-rain-days.csv): Monthly number of rain days from 1982 to 2022. A day is considered to have “rained” if the total rainfall for that day is 0.2mm or more.
-* [`rainfall-monthly-total.csv`](./data/rainfall-monthly-total.csv): Monthly total rain recorded in mm(millimeters) from 1982 to 2022
-
-Other relevant weather datasets from [data.gov.sg](data.gov.sg) that you can download and use are as follows:
-
-* [Relative Humidity](https://data.gov.sg/dataset/relative-humidity-monthly-mean)
-* [Monthly Maximum Daily Rainfall](https://data.gov.sg/dataset/rainfall-monthly-maximum-daily-total)
-* [Hourly wet bulb temperature](https://data.gov.sg/dataset/wet-bulb-temperature-hourly)
-* [Monthly mean sunshine hours](https://data.gov.sg/dataset/sunshine-duration-monthly-mean-daily-duration)
-* [Surface Air Temperature](https://data.gov.sg/dataset/surface-air-temperature-mean-daily-minimum)
-
-**Make sure you cross-reference your data with your data sources to eliminate any data collection or data entry issues.**
-
-#### Additional Data
-You can also use other datasets for your analysis, make sure to cite the source when you are using them.
+Singapore is an island city-state surrounded by water, situated near the equator and has a tropical climate. Our geographical location makes us susceptible to infectious diseases caused by bacteria, viruses, fungi or even parasites due to the high humidity and rainfall. The project aims to study the relationship between the climate in Singapore and the number of locally reported Typhoid cases to develop effective public health interventions.
 
 ---
 
-### Deliverables
+### Outside Research
+There was a study done to understand the relationship between typhoid cases and the climate in Bangladesh, which has similar climate conditions as Singapore with high humidity and high rainfall. In that study, "clear periodicity was found in the timing of case occurrences, with most cases occurring in the monsoon season." The study also found out that "typhoid incidence was seen to increase with temperature, rainfall and river level". While the period of study occured more than a decade ago from 2005 to 2009, it is still relevant in our study to find out whether the different types of monsoon that Singapore encounters have an impact on the locally reported Typhoid cases.
 
-All of your projects will comprise of a written technical report and a presentation. As we continue in the course, your technical report will grow in complexity, but for this initial project it will comprise:
-- A Jupyter notebook that describes your data with visualizations & statistical analysis.
-- A README markdown file the provides an introduction to and overview of your project.
-- Your presentation slideshow rendered as a .pdf file.
-**NOTE**: Your entire Github repository will be evaluated as your technical report. Make sure that your files and directories are named appropriately, that all necessary files are included, and that no unnecessary or incomplete files are included.
-
-For your first presentation, you'll be presenting to a **non-technical** audience. You should prepare a slideshow with appropriately scaled visuals to complement a compelling narrative. **Presentation duration will be 6 minutes.**
+Source: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3554574/
 
 ---
 
-### Technical Report Starter Code
+### Datasets used
 
-Future projects will require you to decide on the entire structure of your technical report. Here, we provide you with [starter code](./code/starter-code.ipynb) in a Jupyter notebook that will help to guide your data exploration and analysis. **If you choose to edit the core structure of this notebook, make sure you don't exclude any of the requested operations**.
+The datasets used include the following:
 
----
+1) **WeeklyInfectiousDiseaseBulletinCases.csv**: Weekly publication of statistics on local infectious disease situation. Each epidemiological week begins on a Sunday and ends on Saturday.The weekly data is available from Jan 2012 to Dec 2022.
 
-### Suggested Resources
+2) **SurfaceAirTemperatureMonthlyMean.csv**: The monthly mean air temperature recorded in degree celsius from Jan 1982 to May 2023.
 
-Here's a link on [how to give a good lightning talk](https://www.semrush.com/blog/16-ways-to-prepare-for-a-lightning-talk/), which provides some good recommendations for short presentations.
+3) **RainfallMonthlyNumberofRainDays.csv**: The number of rain days (day with rainfall amount of 0.2mm or more) in a month from Jan 1982 to Jun 2023.
 
-[Here's a great summary](https://towardsdatascience.com/storytelling-with-data-a-data-visualization-guide-for-business-professionals-97d50512b407) of the main points of the book _Storytelling with Data_, which I can't recommend enough. [Here's a blog post](http://www.storytellingwithdata.com/blog/2017/8/9/my-guiding-principles) by the author about his guiding principles for visualizations.
+4) **SunshineDurationMonthlyMeanDailyDuration.csv**: The monthly mean sunshine hours in a day recorded from Jan 1982 to Jun 2023.
 
----
+5) **RainfallMonthlyHighestDailyTotal.csv**: The highest daily total rainfall for the month recorded in mm(millimeters) from Jan 1982 to Jun 2023.
 
-### Submission
+6) **RainfallMonthlyTotal.csv**: The monthly total rain recorded in mm(millimeters) from Jan 1982 to Jun 2023.
 
-**Materials must be submitted through your GitHub account repo shared with the Teaching Team by scheduled due date.**
+7) **RelativeHumidityMonthlyMean.csv**: The monthly mean relative humidity recorded in percentage from Jan 1982 to Jun 2023.
 
-Your technical report will be hosted on github.com Make sure it includes:
-
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis (renamed to describe your project)
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
+All seven datasets can be found from [data.gov.sg](data.gov.sg).
 
 ---
 
-### Presentation Structure
+### Data Dictionary
 
-- **Presentation Time: 6 minutes**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. Assume you are presenting to a non-technical audience (executives with the College Board, school administrators, admissions counselors, State officials, etc.).
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level, **CODE IS ALWAYS INAPPROPRIATE FOR A NON-TECHNICAL AUDIENCE**).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
 
-Be sure to rehearse and time your presentation before class.
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
+|month|string|RainfallMonthlyTotal|Month and year of the data|
+|year|string|RainfallMonthlyTotal|Year of the data|
+|month_of_year|string|RainfallMonthlyTotal|Month of the data|
+|total_rainfall|float|RainfallMonthlyTotal|Total rainfall in mm| 
+|no_of_rainy_days|integer|RainfallMonthlyNumberofRainDays|The number of rain days|
+|mean_temp|float|SurfaceAirTemperatureMonthlyMean|The monthly mean air temperature recorded in degree celsius|
+|maximum_rainfall_in_a_day|float|RainfallMonthlyHighestDailyTotal|The highest daily total rainfall for the month in mm|
+|mean_sunshine_hrs|float|SunshineDurationMonthlyMeanDailyDuration|The monthly mean sunshine hours in a day|
+|mean_rh|float|RelativeHumidityMonthlyMean|The monthly mean relative humidity recorded in percentage|
+|typhoid|float|WeeklyInfectiousDiseaseBulletinCases|Number of Typhoid cases|
+|monsoon_type|string|moonsoon_df|Type of monsoon in Singapore, i.e. Northeast (NE), Southwest (SW), Not applicable (NA)|
 
 ---
 
-### Rubric
-Teaching team will evaluate your project using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
+### Summary of findings
 
-**Note:** Presentation and codes will be prepared and submitted by each student individually.
+For the total rainfall, the comparison against each decade of data in 1990, 2000, 2010 and 2020 showed that that the there were shifts in the highest month of rainfall over the decades from the second half of the calendar year (i.e. Jul to Dec) to the first half of the year (i.e. Jan to Jun) in the most recent decade of 2020. However, the lowest month of rainfall largely remained largely consistent over the decades and falls on the month of February.
 
-**Scores will be out of 21 points based on the 7 items in the rubric.** <br>
-*3 points per section*<br>
+For the number of rainy days, the comparison against each decade of data in 1990, 2000, 2010 and 2020 did not show significant shifts as the highest number of rainy days were all in the second half of the calendar year (i.e. Jul to Dec), and the lowest number of rainy days were all in the first half of the calendar year (i.e. Jan to Jun).
 
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
+When we look at the climate data from 1982 to 2022, we see that the lowest year of number of rainy days and rainfall were consistent and occured in 1997. However, the highest number of rainy days (i.e. 2022) and rainfall (i.e. 2007) were on different years.
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
+The findings segmented by each available decade of data (i.e. 1990, 2000, 2010 and 2020) as well as monthly data from 1982 to 2022 suggested changes in rainfall pattern of Singapore over the past 40 years. There were also shifts in the period of highest rainfall which occurred in the first half of the year for the most recent decade in 2020. In addition, while the lowest rainfall and lowest number of rainy days happen to be the same year, the year of highest rainfall and highest number of rainy days were not the same year. This suggested that both climate metrics might not have very strong positive correlation which we can be studied further using correlation plots.
 
-**Clarity of Message**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the project?
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
+Based on the above findings, the more recent years of climate data would be more relevant for our subsequent study. We will be  exploring the climate data from 2018 to 2022 and analyse the relationship betweem the climate in Singapore and the local reported Typhoid cases to develop effective public health interventions.
 
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Does the student demonstrate mastery masking in Pandas?
-- Does the student demonstrate mastery sorting in Pandas?
+Based on the heatmap showing the correlation between all the numeric columns of the climate and typhoid cases data (i.e. df_final), we are able to detect the following correlations:
 
-**Data Cleaning and EDA**
-- Does the student fix data entry issues?
-- Are data appropriately labeled?
-- Are data appropriately typed?
-- Are datasets combined correctly?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
+1) There is moderate positive correlation between the total rainfall and the number of rainy days (i.e. correlation of 0.57). This confirms our earlier suspicion that the total rainfall and number of rainy days do not hold strong positive correlation.
 
-**Visualizations**
-- Are the requested visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
+2) There also exists slight negative correlation between the average relative humidity and the number of typhoid cases and (i.e. correlation of -0.35). This meant that the higher the average relative humidity, we should see lower number of typhoid cases.
 
-**Research and Conceptual Understanding**
-- Were useful insights gathered from outside sources?
-- Are sources clearly identified?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
+However, based on the current data, we are not able to conclude that there is moderate or strong correlations between typhoid cases with the various climate metrics recorded. We could then consider segmenting the data by the type of monsoon which would have differing climate metrics to see whether there are specific monsoon seasons where the number of typhoid cases has a stronger correlation with the specific climate metrics recorded.
 
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+After we segment the data by the Southwest monsoon period, Northeast monsoon period and non-monsoon period, we can see from the heatmaps that during the Southwest monsoon period, there is higher moderate negative correlation of -0.59 between the number of typhoid cases and the average relative humidity, compared to when we plot it against the full data. There is also a higher moderate negative correlation of -0.47 between the number of typhoid cases and the number of rainy days, compared to when we plot it against the full data. 
 
-In order to pass the project, students must earn a minimum score of 1 for each category.
-- Earning below a 1 in one or more of the above categories would result in a failing project.
-- While a minimum of 1 in each category is the required threshold for graduation, students should aim to earn at least an average of 1.5 across each category. An average score below 1.5, while it may be passing, means students may want to solicit specific feedback in order to significantly improve the project before showcasing it as part of a portfolio or the job search.
+On the contrary, for the Northeast monsoon period and non monsoon period, there is much weaker negative correlation between the number of typhoid cases and the average relative humidity, compared to when we plot it against the full data.
 
-### REMEMBER:
+With the above, we can see that for the months of Jun to Sep of the calendar year which happens to be the Southwest monsoon period, when the average relative humidity decreases during this period, we generally see more typhoid cases reported in Singapore. 
 
-This is a learning environment and you are encouraged to try new things, even if they don't work out as well as you planned! While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+---
 
-```python
+### Conclusions and Recommendations
 
-```
+Based on the findings above, we can see that there exists a moderate negative correlation between the number of typhoid cases with the average relative humidity of the environment. This negative correlation is stronger when we segment out the data for the Southwest monsoon period, where the median of the average relative humidity is lower than the other two groups.
+
+While the number of typhoid cases in Singapore has been on a decline since the 1980s due to efforts from the government to improve environmental hygiene and sanitation, we should remain vigilant against such infectious disease. This is because at the earlier stages of contracting such disease the symptoms are similar to common fever, and takes up to two weeks before the more apparent stomach related symptoms and skin rashes show. This disease has also shown resistance against antibiotics, and the carriers of the disease without symptoms can remain contagious.
+
+Based on the findings on the climate conditions in Singapore with the number of locally reported Typhoid cases, we should encourage the public to undergo Typhoid vaccine especially during the Southwest monsoon period, where we see a stronger negative correlation between the average relative humidity during the Southwest monsoon period and the number of typhoid cases reported in Singapore.
+
+Last but not least, although Typhoid vaccine is available in Singapore, it is currently not subsidised for the general public. This may potentially deter the public from taking the Typhoid vaccine due to its higher cost. We should consider revising the list of subsidised vaccinations to include Typhoid vaccine under the subsidised list for the general public, especially during the Southwest monsoon period.
+
+Sources:
+
+1) https://eresources.nlb.gov.sg/infopedia/articles/SIP_2022-08-19_132436.html#:~:text=Subsequently%20from%201990%20to%202009,had%20no%20recent%20travel%20history.
+
+2) https://my.clevelandclinic.org/health/diseases/17730-typhoid-fever
+
+3) https://www.nhgp.com.sg/our-services/other-services/Pages/Vaccination-Clinic.aspx
+
+4) https://www.gavi.org/vaccineswork/global-response-needed-typhoid-evades-antibiotics
+
+
